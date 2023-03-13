@@ -32,3 +32,38 @@
     opacity:1;
     transform: scale(1);
 }
+
+.image1{
+    width:1490px;
+    height:800px;
+    transition:0.8s;
+    display:flex;
+    flex-direction: column; /*decide if vertical or horizontal of paragraphs*/
+    justify-content:center;
+    align-items:center;
+    background-image: url(./try2.jpg);
+    background-position:center;
+    background-size:cover;
+    position:relative;
+    right:10px;
+}
+
+.image1 p{
+    margin-top: 50px;
+    margin-left:150px;
+    margin-right:100px;
+    opacity:0;
+    transform:scale(0);
+    transition:1.2s;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.image1:hover{
+    box-shadow: 0 0 0 500px rgba(5, 5, 5, 0.9) inset; /*used to be 0,0,0,0.9*/
+}
+
+.image1:hover p{
+    opacity:1;
+    transform: scale(1);
+}
