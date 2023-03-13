@@ -54,6 +54,9 @@
     }
     
   </style>
+  
+
+
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -61,9 +64,12 @@
     <link rel="stylesheet" href="./cards.css">
     <link rel="stylesheet" href="./flipcards.css">
     <link rel="stylesheet" href="./image.css">
+    <link rel="stylesheet" href="./treeview.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
   </head>
   <body>
-
+    <script src="./tv.js"></script>
   <section id="Home">
       
     <IMG SRC="introAnna.gif" class="center">
@@ -147,7 +153,7 @@
     <p>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea fuga nemo facilis dolor reiciendis quae.
     </p>
-    <a href="#Home">
+    <a href="#more tech">
     <img src="arrow.gif" alt="">
     </a>
   </div>
@@ -159,12 +165,35 @@
   <div class="card">
     <img class="card__image" src="durham.png" alt="">
     <div class="card__content">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at.
-      </p>
-      <p>
-        Alias itaque praesentium eum, pariatur consequatur ducimus asperiores accusantium velit minima?
-      </p>
+      
+      <ul id="myUL">
+        <li><span class="caret">Beverages</span>
+          <ul class="nested">
+            <li>Water</li>
+            <li>Coffee</li>
+            <li><span class="caret">Tea</span>
+              <ul class="nested">
+                <li>Black Tea</li>
+                <li>White Tea</li>
+                <li><span class="caret">Green Tea</span>
+                  <ul class="nested">
+                    <li>Sencha</li>
+                    <li>Gyokuro</li>
+                    <li>Matcha</li>
+                    <li>Pi Lo Chun</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+
+
+
+
+      
     </div>
     <div class="card__info">
       <div>
@@ -222,7 +251,34 @@
 </section>
 
 
+<section id="more tech">
+<!-- The grid: three columns -->
+<div class="row">
+  <div class="column" onclick="openTab('b1');" style="background:#a5e3d9;">Projects</span></div>
+  <div class="column" onclick="openTab('b2');" style="background:#b4a5e3;">Skills</div>
+  <div class="column" onclick="openTab('b3');" style="background:#a5e3d9;">Courses</div>
+</div>
 
+<!-- The expanding grid (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background:#a5e3d9">
+  <!-- If you want the ability to close the container, add a close button -->
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <h2>Box 1</h2>
+  <p>Lorem ipsum..</p>
+</div>
+
+<div id="b2" class="containerTab" style="display:none;background:#b4a5e3">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <h2>Box 2</h2>
+  <p>Lorem ipsum..</p>
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:#a5e3d9">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <h2>Box 3</h2>
+  <p>Lorem ipsum..</p>
+</div>
+</section>
 
     <!--
        <IMG SRC="try1.jpg">

@@ -1,1 +1,37 @@
 
+.column {
+    float: left;
+    padding-top:100px;
+    padding-left: 50px;
+    width: 22%;
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: 000;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius:25px;
+  }
+  
+  .containerTab {
+    padding: 20px;
+    color: #000;
+    margin:20px;
+    border-radius:25px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Closable button inside the image */
+  .closebtn {
+    float: right;
+    color: #000;
+    font-size: 35px;
+    cursor: pointer;
+  }
