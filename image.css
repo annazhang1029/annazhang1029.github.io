@@ -67,3 +67,13 @@
     opacity:1;
     transform: scale(1);
 }
+
+.image2{
+    width:1490px;
+    height:800px;
+    background-color: #fff;
+    background-position:center;
+    background-size:cover;
+    position:relative;
+    right:10px;
+}
