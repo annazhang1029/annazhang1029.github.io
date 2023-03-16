@@ -85,16 +85,13 @@
     <div class="flip-card-front">
     <IMG SRC="durham.png" alt="" class="center">
   </div>
+  <p>
+    &nbsp;
+  </p>
   
   <div class="flip-card-back">
    
     <h2>def me():</h2>
-    <p>
-      There is no single phrase that can fully describe me, but I hope to show you my different sides in this website😄.
-    </p>
-    <h2>
-      👻Who am I?
-    </h2>
     <p>
       I am a first-year student ('26) at
       <span style="color: #0000a0">Duke University</span>
@@ -104,6 +101,16 @@
       <span style="color: #0000a0">Statistics</span> and pursuing a minor in 
       <span style="color: #0000a0">German Studies</span>👩🏻‍💻.
     </p>
+
+    <p>
+      But frankly, I don't think there is a single phrase that can fully describe me. But I hope to show you my different sides here😄.
+    </p>
+    <!--
+    <h2>
+      👻Who am I?
+      def my
+    </h2> -->
+    
     <div>
       <a style="text-decoration: none "href="#about me" class="card__link">
         <button type="button" class="button">
@@ -128,7 +135,7 @@
       </p>
 
   <div class="image">
-    <p>define personal_background():</p>
+    <p>define personalBackground():</p>
     <p>
       I was born and raised in Guangzhou, China. I came to New Jersey at the age of 14 to attend a boarding high school. After spending 4 years there, 
       I now attend Duke University in Durham, North Carolina.
@@ -149,13 +156,14 @@
   <section id="tech background">
 
   <div class="image1">
-    <p>define tech_experience():</p>
+    <p>define techAspiration():</p>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos nemo, sequi id omnis reiciendis dolorem?
+      A first-year college student dedicated to bringing social and international awareness to the STEM field. Possess experience in independent and
+      collaborative research projects, 2+ years of community service leadership roles, and 3+ years in competitive coding.
     </p>
     
     <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea fuga nemo facilis dolor reiciendis quae.
+      Click on the arrow to see my portfolio!
     </p>
     <a href="#more tech">
     <img src="arrow.gif" alt="">
@@ -229,25 +237,43 @@
 
 
 <section id="more tech">
+  <h1>My (Provisionally) Interactive Portfolio</h1>
 <div class="image2">
 <!-- The grid: three columns -->
 <div class="row">
   <div class="column" onclick="openTab('projects');" style="background:#a5e3d9;">Projects</div>
   <div class="column" onclick="openTab('skills');" style="background:#b4a5e3;">Skills</div>
-  <div class="column" onclick="openTab('courses');" style="background:#a5e3d9;">Courses</div>
+  <div class="column" onclick="openTab('outreach');" style="background:#a5e3d9;">Outreach</div>
 </div>
 
+
 <!-- The expanding grid (hidden by default) -->
-<div id="projects" class="containerTab" style="display:none;background:transparent">
+<div id="projects" class="containerTab" style="display:none;background:#a5e3d9;margin-left:80px;width:80%">
   <!-- If you want the ability to close the container, add a close button -->
-  
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
   <h2>Projects</h2>
   <p>Lorem ipsum..</p>
   <div class="cards">
     <div class="card">
-      <img class="card__image" src="durham.png" alt="">
+      <img class="card__image" src="glucose.png" alt="">
       <div class="card__content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+        <p>In 2020, I built this glucose prediction model with Recurrent Neural Networks. Aiming to provide accurate prediction for T1D patients
+          in the next 30 and 60 minutes, I compared the performances between Long Short-Term Memory and the conventional deep learning models and
+          determined an optimal architecture that reduced one-third of the running time.
+
+        <p>This paper aims to build a model for glucose prediction using the preferred architecture.
+          According to National Diabetes Statistics Report from Centers for Disease Control (CDC), by 2020, there are 34.2 million 
+          Americans with Diabetes, which is 1 in every 10 people. Therefore,
+          glucose prediction, with its poten- tial use in ”artificial pancreas”,
+          has become crucial in the realm of managing patients’ glucose level and taking necessary precautions.
+          In this paper, we develop a glucose prediction algorithm for patients to predict their blood sugar level in the future 30 minutes and
+          60 minutes with the input data of last 4 hours. The general data set from a Continuous Glucose Monitoring (CGM) simulator is
+          of three input fields – glucose levels, insulin, and time. The model is built by Re- current Neural Network (RNN) and Long Short-Term Memory
+          network (LSTM). Eventually, the results are evaluated by the mean squared error (MSE) between the actual blood sugar levels and
+          the predicted ones. The mean value of the best MSE (unscaled) of the three out of ten patients in 30 minutes is 0.0138,
+          while the mean value in 60 minutes is 0.0093. From the results, we can see that the performance of the prediction model is fairly accurate.
+          As a result, we can conclude that applying LSTM to the task of pre- dicting blood sugar level in the future is a favorable choice. 
+        </p>
       </div>
       <div class="card__info">
         <div>
@@ -318,10 +344,10 @@
   <h3> &nbsp&nbsp&nbspHTML | JavaScript | CSS | WordPress</h3>
 </div>
 
-<div id="courses" class="containerTab" style="display:none;background:#a5e3d9;margin-left:20px;width:80%">
+<div id="outreach" class="containerTab" style="display:none;background:#a5e3d9;margin-left:20px;width:80%">
   <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-  <h2>my courses</h2>
-  <h3>too lazy to add</h3>
+  <h2>Outreach and Community Service</h2>
+  <h3>wait for it...</h3>
 </div>
 
 
@@ -335,16 +361,21 @@
     -->
      
 
+
+  <!--
     <button type="button2" class="button2">
         <span class="button2__icon">
           <ion-icon name="chevron-down-outline"></ion-icon>
         </span>
     </button>
+  -->
     
 
     <a href="https://google.com">
       
       </a>
+
+  <!--
 
     <button type="button" class="button">
       <span class="button__text">Education&nbspand&nbspBackground</span>
@@ -352,6 +383,7 @@
         <ion-icon name="school-outline"></ion-icon>
       </span>
     </button>
+  -->
 
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
