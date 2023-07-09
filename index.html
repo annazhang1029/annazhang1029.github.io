@@ -1,382 +1,145 @@
 <!DOCTYPE html>
-<html>
-  <style>
-    h1 {text-align: center;
-    font-size: 50px;
-  }
-    .button{
-      display: inline-flex;
-      position: relative;
-      left: 160px;
-      top: 10px;
-      width: 350px;
-      height: 100px;
-      padding: 5;
-      background: #eceaea;
-      border: 2px solid #eceaea;
-      outline: none;
-      border-radius: 5px;
-      overflow: hidden;
-      font-size: 18px;
-      font-weight: 700;
-      cursor: pointer;
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+
+<!-- count particles -->
+<!-- <div class="count-particles">
+  <span class="js-count-particles">--</span> particles
+</div> -->
+
+<nav>
+  <a href="#">Contact Me</a>
+  <a href="#author">Portfolio</a>
+  <a href="about.html">About Me</a>
+  <a href="index.html">Home</a>
+</nav>
+
+<div class="title">
+<h1>Hi there! I am Anna Zhang,</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>a computer science student at Duke University</h1>
+
+<h3>(aspiring to be a software engineer)</h3>
+</div>
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<!-- scripts -->
+<script src="particles.js"></script>
+<script src="js/app.js"></script>
+
+<!-- stats.js -->
+<!-- <script src="js/lib/stats.js"></script> -->
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
     }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
 
-    button:hover{
-      background: #eceaea;
-      border: 2px solid #0000a0; 
-    }
-
-    /*.
-    .button:active{
-      background: #020202;
-      font-style: #fff;
-    }
-    */
-
-
-    .button__text{
-      display: inline-flex;
-      align-items: center;
-      padding: 0 8px;
-      color: #000000;
-      font-family: 'Times New Roman', Times, serif;
-      font-size:22px;
-      height: 100%;
-    }
-    .button__icon{
-      display: inline-flex;
-      align-items: center;
-      padding: 0 24px;
-      color: #000000;
-      font-size:30px;
-      height: 100%;
-    }
-    
-  </style>
-  
-
-
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <title>My GitHub Pages Site</title>
-    <link rel="stylesheet" href="./cards.css">
-    <link rel="stylesheet" href="./flipcards.css">
-    <link rel="stylesheet" href="./image.css">
-    <link rel="stylesheet" href="./treeview.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  </head>
-  <body>
-    <script src="./tv.js"></script>
-  <section id="Home">
-      
-    <IMG SRC="introAnna.gif" class="center">
-    <!--
-    <p><span style="color: #0000a0">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspA first-year computer science student at Duke. </span></p> 
-    -->
-
-
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-    <IMG SRC="durham.png" alt="" class="center">
-  </div>
-  <p>
-    &nbsp;
-  </p>
-  
-  <div class="flip-card-back">
-   
-    <h2>def me():</h2>
-    <p>
-      I am a first-year student ('26) at
-      <span style="color: #0000a0">Duke University</span>
-      intending to major in 
-      <span style="color: #0000a0">Computer Science</span>
-      and 
-      <span style="color: #0000a0">Statistics</span> and pursuing a minor in 
-      <span style="color: #0000a0">German Studies</span>👩🏻‍💻.
-    </p>
-
-    <p>
-      But frankly, I don't think there is a single phrase that can fully describe me. But I hope to show you my different sides here😄.
-    </p>
-    <!--
-    <h2>
-      👻Who am I?
-      def my
-    </h2> -->
-    
-    <div>
-      <a style="text-decoration: none "href="#about me" class="card__link">
-        <button type="button" class="button">
-          <span class="button__text">&nbsp&nbsp&nbspLearn more about me!</span>
-        
-          <span class="button__icon">
-            <ion-icon name="caret-down-circle-outline"></ion-icon>
-          </span>
-        
-        </button>
-      </a>
-    </div>
-  </div>
-  </div>
-  </div>
- 
-  </section>
-
-  <section id="about me">
-    <p>
-           
-      </p>
-
-  <div class="image">
-    <p>define personalBackground():</p>
-    <p>
-      I was born and raised in Guangzhou, China. I came to New Jersey at the age of 14 to attend a boarding high school. After spending 4 years there, 
-      I now attend Duke University in Durham, North Carolina.
-    </p>
-    
-    <p>
-    I dance, I eat, I travel, I rock climb, and I enjoy being whimsical. But most importantly, I love all aspects of theatre -- I act, I choreograph, and I was in the tech crew (building,
-    painting, prop master, all that good stuff). My favorite musical of all time is The Phantom of the Opera, but I am obsesssed with the
-    soundtrack of Moulin Rouge. I am also proud to tell you that I sat at the center front row to watch Hamilton😜
-    </p>
-    <a href="#tech background">
-    <img src="arrow.gif" alt="">
-    </a>
-  </div>
-
-  </section>
-
-  <section id="tech background">
-
-  <div class="image1">
-    <p>define techAspiration():</p>
-    <p>
-      A first-year college student dedicated to bringing social and international awareness to the STEM field. Possess experience in independent and
-      collaborative research projects, 2+ years of community service leadership roles, and 3+ years in competitive coding.
-    </p>
-    
-    <p>
-      Click on the arrow to see my portfolio!
-    </p>
-    <a href="#more tech">
-    <img src="arrow.gif" alt="">
-    </a>
-  </div>
-
-  </section>
-<!--
-<section id="more">
-<div class="cards">
-  <div class="card">
-    <img class="card__image" src="durham.png" alt="">
-    <div class="card__content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-    </div>
-    <div class="card__info">
-      <div>
-        <i class="material-icons">thumb_up</i>310
-      </div>
-      <div>
-        <a href="./" class="card__link">View Article</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <img class="card__image" src="durham.png" alt="">
-    <div class="card__content">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at.
-      </p>
-      <p>
-        Alias itaque praesentium eum, pariatur consequatur ducimus asperiores accusantium velit minima?
-      </p>
-    </div>
-    <div class="card__info">
-      <div>
-        <i class="material-icons">thumb_up</i>310
-      </div>
-      <div>
-        <a href="./" class="card__link">View Article</a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="card">
-    <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-    <div class="card__content">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at.
-      </p>
-      <p>
-        Alias itaque praesentium eum, pariatur consequatur ducimus asperiores accusantium velit minima?
-      </p>
-    </div>
-    <div class="card__info">
-      <div>
-        <i class="material-icons">thumb_up</i>140
-      </div>
-      <div>
-        <a href="#about me" class="card__link">
-          <ion-icon name="school-outline"></ion-icon>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-</section>
--->
-
-
-<section id="more tech">
-  <h1>My (Provisionally) Interactive Portfolio</h1>
-<div class="image2">
-<!-- The grid: three columns -->
-<div class="row">
-  <div class="column" onclick="openTab('projects');" style="background:#a5e3d9;">Projects</div>
-  <div class="column" onclick="openTab('skills');" style="background:#b4a5e3;">Skills</div>
-  <div class="column" onclick="openTab('outreach');" style="background:#a5e3d9;">Outreach</div>
-</div>
-
-
-<!-- The expanding grid (hidden by default) -->
-<div id="projects" class="containerTab" style="display:none;background:#a5e3d9;width:80%;margin-left:80px">
-  <!-- If you want the ability to close the container, add a close button -->
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-  <div class="cards">
-    <div class="card">
-      <img class="card__image" src="glucose.png" alt="">
-      <div class="card__content">
-        <h3>Research on Recurrent Neural Network Glucose Prediction Model</h3>
-        <p>In 2020, I built a glucose prediction model with RNN to provide accurate prediction for T1D patients
-          in the next 30 and 60 minutes.</p>
-        <p>
-          I compared the performances between Long Short-Term Memory (LSTM) and the conventional deep learning models and
-          determined an optimal architecture that reduced one-third of the running time.
-        </p>
-        <p>My project mentor was an assistant professor
-          at University College London.</p>
-      </div>
-      <div class="card__info">
-        <div>
-          🗓️June 2020 - October 2020
-        </div>
-        <div>
-          <a href="./projectDetails.html" class="card__link">More Info Here</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <img class="card__image" src="durham.png" alt="">
-      <div class="card__content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at.
-        </p>
-        <p>
-          Alias itaque praesentium eum, pariatur consequatur ducimus asperiores accusantium velit minima?
-        </p>
-      </div>
-      <div class="card__info">
-        <div>
-          <i class="material-icons">thumb_up</i>310
-        </div>
-        <div>
-          <a href="./" class="card__link">View Article</a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="card">
-      <img class="card__image" src="https://fakeimg.pl/400x300/009578/fff/" alt="">
-      <div class="card__content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at.
-        </p>
-        <p>
-          Alias itaque praesentium eum, pariatur consequatur ducimus asperiores accusantium velit minima?
-        </p>
-      </div>
-      <div class="card__info">
-        <div>
-          <i class="material-icons">thumb_up</i>140
-        </div>
-        <div>
-          <a href="#about me" class="card__link">
-            <ion-icon name="school-outline"></ion-icon>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div id="skills" class="containerTab" style="display:none;background:#b4a5e3;width:50%;margin-left:300px">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-  <h2>&#x2022; Programming Language</h2>
-  <h3> &nbsp&nbsp&nbspJava | Python | C</h3>
-  <h2>&#x2022; Data Analysis</h2>
-  <h3> &nbsp&nbsp&nbspR | MATLAB | Qualtrics | Microsoft</h3>
-  <!-- Wait until I finish the Muser summer project (and maybe bass connections)
-  <h2>&#x2022; Mobile Application Development</h2>
-  <h2> &nbsp&nbsp&nbspSwift | Java</h2>
-  -->
-  <h2>&#x2022; Web Development</h2>
-  <h3> &nbsp&nbsp&nbspHTML | JavaScript | CSS | WordPress</h3>
-</div>
-
-<div id="outreach" class="containerTab" style="display:none;background:#a5e3d9;margin-left:20px;width:80%">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-  <h2>Outreach and Community Service</h2>
-  <h3>wait for it...</h3>
-</div>
-
-
-
-</div>
-
-</section>
-
-    <!--
-       <IMG SRC="try1.jpg">
-    -->
-     
-
-
-  <!--
-    <button type="button2" class="button2">
-        <span class="button2__icon">
-          <ion-icon name="chevron-down-outline"></ion-icon>
-        </span>
-    </button>
-  -->
-    
-
-    <a href="https://google.com">
-      
-      </a>
-
-  <!--
-
-    <button type="button" class="button">
-      <span class="button__text">Education&nbspand&nbspBackground</span>
-      <span class="button__icon">
-        <ion-icon name="school-outline"></ion-icon>
-      </span>
-    </button>
-  -->
-
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-  </body>
+</body>
 </html>
+
+<style>
+
+  .title{
+    position:relative;
+    top:40vh;
+  }
+  #particles-js{
+    position:absolute;
+    z-index:1;
+    top:-10px;
+  }
+  h1{
+    font-size:2.5vw;
+    font-family: monospace;
+    color:white;
+    text-align: center;
+    position:absolute;
+    width:100%;
+    left:0;
+    z-index:2;
+  }
+
+  h3{
+    font-size:1.5vw;
+    font-family: monospace;
+    color:white;
+    font-weight:100;
+    text-align: center;
+    position:absolute;
+    width:100%;
+    left:0;
+    z-index:2;
+    top:200px;
+  }
+
+  nav {
+  position: fixed;
+  width: 100%;
+  padding: 10px 16px;
+  top:0;
+  z-index: 3;
+  right:0;
+}
+
+a {
+    float:right;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a {
+  color: white;
+  display: inline-block;
+  position: relative;
+  padding: 8px 12px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 75%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 10px;
+  background-color: rgb(52, 51, 51);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+</style>

@@ -1,0 +1,335 @@
+<!-- <img src="./introAnna.gif" alt="animate intro"> -->
+<nav>
+    <a href="#hero">Contact Me</a>
+    <a href="#author">Portfolio</a>
+    <a href="#discover">About Me</a>
+    <a href="index.html">Home</a>
+  </nav>
+
+<div class="secondaryNav">
+    <img src="menu.png" alt="menu dropdown" onclick="myFunction()">
+    <div id="myDropdown" class="dropdown-content">
+        <ul style="list-style:none">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="#hero">About Me</a></div>
+            <div><a href="#hero">Portfolio</a></div>
+            <div><a href="#hero">Contact Me</a></div>
+        </ul>
+        
+      </div>
+</div>
+
+<div class="wrapper">
+
+    <div class="hero">
+        <h1>def me():</h1>
+        <p>
+                I am a second-year student at
+                <span style="color: #0000a0">Duke University</span>
+                intending to double major in 
+                <span style="color: #0000a0">Computer Science</span>
+                and 
+                <span style="color: #0000a0">Statistics</span> and pursuing a minor in 
+                <span style="color: #0000a0">German Studies</span>👩🏻‍💻.
+        </p>
+
+        <p>
+            I possess experience in independent and collaborative projects, 2+ years of community service leadership roles, and 3+ years in competitive coding, and I am dedicated to bringing social and international awareness to the STEM field.
+       </p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="techExperience">
+            <h1>Def techExperience():</h1>
+                    <ul>
+                        <li><span style="font-weight:bold;color:red">Teaching Assistant</span> (Fall 2023 - Present)</li>
+                        <p style="color: #0000a0">📍 Duke Department of Computer Science</p>
+                        <li><span style="font-weight:bold; color:red">Full-stack Web Development Intern </span>(June - August 2023)</li>
+                        <p style="color: #0000a0">📍 Duke Office of Information Technology</p>
+                        <li><span style="font-weight:bold; color:red">Mobile Application Developer</span> (May 2023)</li>
+                        <p style="color: #0000a0">📍 Physical Therapy Apps</p>
+                    </ul>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       <h1>Def skills():</h1>
+       <div class="row">
+        <!-- <div class="tablinks" onclick="openCity(event, 'Languages')">Languages
+            <ul id="Languages" class="tabcontent">
+                <li>Java</li>
+                <li>C</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>R</li>
+            </ul>
+
+        </div> -->
+        <div class="tablinks">Languages💡
+            <ul id="Languages" class="tabcontent">
+                <li>Java</li>
+                <li>C</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>R</li>
+                <li>Swift</li>
+            </ul>
+
+        </div>
+
+        <div class="tablinks">Web🖥️
+            <ul id="Web" class="tabcontent">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Bootstrap</li>
+                <li>Svelte</li>
+                <li>Node.js</li>
+            </ul>
+        </div>
+        <div class="tablinks">Tools&Technology🛠️
+            <ul id="Tech" class="tabcontent">
+                <li>Git</li>
+                <li>MongoDB</li>
+                <li>Figma</li>
+                <li>MATLAB</li>
+                <li>Qualtrics</li>
+                <li>Microsoft Excel</li>
+            </ul>
+        </div>
+      </div>
+
+        
+    </div>
+
+    <div class="plant">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.264/build/spline-viewer.js"></script>
+        <spline-viewer loading-anim url="https://prod.spline.design/y8FjIL0ouGUmIFD0/scene.splinecode"></spline-viewer>
+    </div>
+
+</div>
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+}
+
+let count=0;
+function myFunction() {
+    count+=1;
+    if (count%2===1)
+  document.getElementById("myDropdown").style.display="block";
+  else
+  document.getElementById("myDropdown").style.display="none";
+}
+</script>
+
+
+<style>
+
+.show {display:block;}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 25px 8px 0;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+.dropdown-content {
+  display: none;
+  position:relative;
+  left:-100px;
+  /* left:200px; */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  position:absolute;
+  z-index:5;
+}
+
+.secondaryNav{
+    position:relative;
+    left:80%;
+    /* position: relative; */
+    /* display: inline-block; */
+}
+
+.secondaryNav img{
+    max-width:30px;
+    /* float:right;
+    position:fixed;
+    right:30px; */
+    left:30px;
+    position:relative;
+}
+
+.secondaryNav a:hover {
+    color:#a5e3d9;
+    font-weight:bold;
+}
+
+
+nav {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  padding: 15px 16px;
+  top:0;
+  z-index: 2;
+  right:0;
+}
+
+a {
+    float:right;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav a {
+  color: rgb(33, 32, 32);
+  display: inline-block;
+  position: relative;
+  padding: 8px 12px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 75%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 10px;
+  background-color: #a5e3d9;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+
+/* nav a:hover{
+    background-color:#a5e3d9;;
+    color:white;
+    font-weight:bold;
+} */
+
+    .techExperience ul{
+        position:relative;
+        top:180px;
+    }
+
+    /* .tabcontent{
+        display:none;
+    } */
+
+    .tablinks {
+    float: left;
+    width: 33.33%;
+    }
+
+    .row{
+        position:relative;
+        top:200px;
+    }
+
+    .hero{
+        padding:10px;
+        width:47%;
+        /* height:100vh; */
+        font-family: "Spline Sans Mono", monospace;
+        margin-left:100px;
+    }
+
+    .pageOne{
+        height:100vh;
+    }
+
+    .pageTwo{
+        height:100vh;
+    }
+
+    .hero h1{
+        position:relative;
+        top:20vh;
+        font-size:50px;
+    }
+
+    .hero >p{
+        position:relative;
+        top:30vh;
+    }
+
+    .plant{
+        /* background:blue; */
+        width:50%;
+        position:fixed;
+        left:50%;
+        height:100vh;
+    }
+
+
+    .wrapper{
+        /* background:green; */
+        display:flex;
+        width: 100vw;
+        /* height:100vh; */
+    }
+
+    @media only screen and (max-width: 768px) {
+        .plant{
+            display:none;
+
+        }
+
+        .tablinks{
+            display:block;
+            width:100%;
+        }
+
+        nav{
+            display:none;
+        }
+
+        .secondaryNav{
+            display:block;
+        }
+}
+
+@media only screen and (min-width: 768px){
+    nav{
+        display:block;
+    }
+
+    .secondaryNav{
+            display:none;
+        }
+}
+   
+</style>
