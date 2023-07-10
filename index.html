@@ -22,15 +22,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE. -->
 
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>particles.js</title>
-  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
-  <meta name="author" content="Vincent Garreau" />
+  <title>Anna Zhang's Playground</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles. Credit to Vincent Garreau.">
+  <meta name="author" content="Anna Minghao Zhang" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" media="screen" href="css/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
 
@@ -45,6 +48,22 @@ THE SOFTWARE. -->
   <a href="about.html">About Me</a>
   <a href="index.html">Home</a>
 </nav>
+
+<div class="secondaryNav">
+  <img src="menu2.png" alt="menu dropdown" onclick="myFunction()">
+  <div id="myDropdown" class="dropdown-content">
+      <!-- <ul style="list-style:none">
+          <div><a href="index.html">Home</a></div>
+          <div><a href="#hero">About Me</a></div>
+          <div><a href="#hero">Portfolio</a></div>
+          <div><a href="#hero">Contact Me</a></div>
+      </ul> -->
+      <p><a href="index.html">Home</a></p>
+      <p><a href="about.html">About Me</a></p>
+      <p><a href="#">Portfolio</a></p>
+      <p><a href="#">Contact Me</a></p>
+  </div>
+</div>
 
 <div class="title">
 <h1>Hi there! I am Anna Zhang,</h1>
@@ -69,29 +88,87 @@ THE SOFTWARE. -->
 <!-- stats.js -->
 <!-- <script src="js/lib/stats.js"></script> -->
 <script>
-  var count_particles, stats, update;
-  stats = new Stats;
-  stats.setMode(0);
-  stats.domElement.style.position = 'absolute';
-  stats.domElement.style.left = '0px';
-  stats.domElement.style.top = '0px';
-  document.body.appendChild(stats.domElement);
-  count_particles = document.querySelector('.js-count-particles');
-  update = function() {
-    stats.begin();
-    stats.end();
-    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-    }
-    requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
+  // var count_particles, stats, update;
+  // stats = new Stats;
+  // stats.setMode(0);
+  // stats.domElement.style.position = 'absolute';
+  // stats.domElement.style.left = '0px';
+  // stats.domElement.style.top = '0px';
+  // document.body.appendChild(stats.domElement);
+  // count_particles = document.querySelector('.js-count-particles');
+  // update = function() {
+  //   stats.begin();
+  //   stats.end();
+  //   if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+  //     count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+  //   }
+  //   requestAnimationFrame(update);
+  // };
+  // requestAnimationFrame(update);
+  
+  
+  let count=0;
+function myFunction() {
+    count+=1;
+    if (count%2===1)
+  document.getElementById("myDropdown").style.display="block";
+  else
+  document.getElementById("myDropdown").style.display="none";
+
+  // document.getElementById("myDropdown").style.display="block";
+  // console.log("check");
+}
 </script>
 
 </body>
 </html>
 
 <style>
+
+
+.dropdown-content a {
+  color: white;
+  padding: 8px 25px 8px 0;
+  text-decoration: none;
+  display: inline-block;
+  position:relative;
+  left:-80px;
+  z-index:5;
+}
+
+
+.dropdown-content {
+  display: none;
+  position:relative;
+  /* left:-100px; */
+  /* left:200px; */
+  min-width: 160px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  display:block;
+  z-index:5;
+}
+
+.secondaryNav{
+    position:absolute;
+    z-index:3;
+    left:80%;
+    /* position: relative; */
+    /* display: inline-block; */
+}
+
+.secondaryNav img{
+    max-width:30px;
+    /* float:right;
+    position:fixed;
+    right:30px; */
+    left:30px;
+    position:relative;
+}
+
+.secondaryNav a:hover {
+    color:rgb(185, 184, 184);
+    font-weight:bold;
+}
 
   .title{
     position:relative;
@@ -164,6 +241,26 @@ nav a::after {
 nav a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+@media only screen and (max-width: 768px){
+  .secondaryNav{
+    display:block;
+  }
+
+  nav{
+    display:none;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .secondaryNav{
+    display:none;
+  }
+
+  nav{
+    display:block;
+  }
 }
 
 </style>
