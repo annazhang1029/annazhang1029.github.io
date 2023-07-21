@@ -1,0 +1,364 @@
+<style>
+    body{
+        background: rgb(10, 10, 10);
+        overflow-x:hidden;
+    }
+
+    .dropdown-content a {
+  color: white;
+  padding: 8px 25px 8px 0;
+  text-decoration: none;
+  display: inline-block;
+  position:relative;
+  left:-80px;
+  z-index:5;
+}
+
+
+.dropdown-content {
+  display: none;
+  position:relative;
+  /* left:-100px; */
+  /* left:200px; */
+  min-width: 160px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  display:block;
+  z-index:5;
+}
+
+.secondaryNav{
+    position:absolute;
+    z-index:3;
+    left:80%;
+    /* position: relative; */
+    /* display: inline-block; */
+}
+
+.secondaryNav img{
+    max-width:30px;
+    /* float:right;
+    position:fixed;
+    right:30px; */
+    left:30px;
+    position:relative;
+}
+
+.secondaryNav a:hover {
+    color:rgb(185, 184, 184);
+    font-weight:bold;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 10px 16px;
+  top:0;
+  z-index: 3;
+  right:0;
+}
+
+a {
+    float:right;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a {
+  color: white;
+  display: inline-block;
+  position: relative;
+  padding: 8px 12px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 75%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 10px;
+  background-color: rgb(52, 51, 51);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@media only screen and (max-width: 768px){
+  .secondaryNav{
+    display:block;
+  }
+
+  nav{
+    display:none;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .secondaryNav{
+    display:none;
+  }
+
+  nav{
+    display:block;
+  }
+}
+
+.content{
+  position: relative;
+  left:50%;
+}
+
+.content h2 {
+  color: #fff;
+  font-size: 8em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  
+}
+
+.content h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #03a9f4;
+}
+
+.content h2:nth-child(2) {
+  color: #03a9f4;
+  animation: animate 4s ease-in-out infinite;
+}
+
+.content2{
+  position: relative;
+  left:50%;
+}
+
+.content2 h2 {
+  color: #fff;
+  font-size: 8em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  
+}
+
+.content2 h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #03a9f4;
+}
+
+.content2 h2:nth-child(2) {
+  color: #03a9f4;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+.card{
+    background-color: #fff;
+    border-radius:20px;
+    height:500px;
+    width:300px;
+    margin:20px;
+}
+
+.card:hover{
+    scale:104%;
+    transition:ease-in-out 0.3s;
+}
+
+.card img{
+    height:50%;
+    width:100%;
+    object-fit: cover;
+    border-radius:20px 20px 0 0;
+}
+
+.tech-stack{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:-20px;
+}
+
+.card-text{
+    margin:0 10px;
+}
+
+.card-container{
+    position:relative;
+    top:30%;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: dodgerblue; */
+    justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .content{
+        display:none;
+    }
+
+    .content2{
+        display:block;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .content{
+        display:block;
+    }
+
+    .content2{
+        display:none;
+    }
+}
+
+</style>
+
+<script>
+    let count=0;
+function myFunction() {
+    count+=1;
+    if (count%2===1)
+  document.getElementById("myDropdown").style.display="block";
+  else
+  document.getElementById("myDropdown").style.display="none";
+}
+
+</script>
+
+<head>
+    <title>Anna's Portfolio</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest"> 
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+</head>
+
+<nav style="font-family:arial">
+    <a href="#">Contact Me</a>
+    <a href="#author">Portfolio</a>
+    <a href="about.html">About Me</a>
+    <a href="index.html">Home</a>
+  </nav>
+  
+  <div class="secondaryNav">
+    <!-- <img src="menu2.png" alt="menu dropdown"> -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6" onclick="myFunction()" style="width:40px;position:relative;left:20px">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+    </svg>
+    
+    <div id="myDropdown" class="dropdown-content" style="display:none">
+        <!-- <ul style="list-style:none">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="#hero">About Me</a></div>
+            <div><a href="#hero">Portfolio</a></div>
+            <div><a href="#hero">Contact Me</a></div>
+        </ul> -->
+        <p><a href="index.html">Home</a></p>
+        <p><a href="about.html">About Me</a></p>
+        <p><a href="#">Portfolio</a></p>
+        <p><a href="#">Contact Me</a></p>
+    </div>
+  </div>
+
+  
+  
+  <div class="content">
+    <h2>My Portfolio</h2>
+    <h2>My Portfolio</h2>
+  </div>
+
+  <div class="content2">
+    <h2>Portfolio</h2>
+    <h2>Portfolio</h2>
+  </div>
+
+  
+
+  <div class="card-container">
+
+        <div class="card">
+            <img src="./Website-project.png" alt="test">
+            <div class="card-text">
+                <p style="font-weight:bold;color:#03a9f4">My Personal Website</p>
+                <p style="font-size:14px">March 2023 (and constantly updating)</p>
+                <p>I self-learned web development and built this website as a personal project over spring break. I took the iniative to explore online developer tools and endeavored to incorporate interactive elements.</p>
+                <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                  </svg> Tech Stack
+                  </p>
+                <div class="tech-stack">
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2927854/pexels-photo-2927854.jpeg?cs=srgb&dl=pexels-aidan-roof-2927854.jpg&fm=jpg" alt="test">
+            <div class="card-text">
+                <p>Project Name</p>
+                <p>project description Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, necessitatibus.</p>
+                <p>Tech Stack</p>
+                <div class="tech-stack">
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2927854/pexels-photo-2927854.jpeg?cs=srgb&dl=pexels-aidan-roof-2927854.jpg&fm=jpg" alt="test">
+            <div class="card-text">
+                <p>Project Name</p>
+                <p>project description Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, necessitatibus.</p>
+                <p>Tech Stack</p>
+                <div class="tech-stack">
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
