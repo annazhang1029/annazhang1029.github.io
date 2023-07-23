@@ -188,8 +188,8 @@ nav a:hover::after {
 .card{
     background-color: #fff;
     border-radius:20px;
-    height:500px;
-    width:300px;
+    height:600px;
+    width:400px;
     margin:20px;
 }
 
@@ -264,7 +264,7 @@ function myFunction() {
 </script>
 
 <head>
-    <title>Anna's Portfolio</title>
+    <title>Anna Zhang's Portfolio</title>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -320,7 +320,7 @@ function myFunction() {
             <div class="card-text">
                 <p style="font-weight:bold;color:#03a9f4">My Personal Website</p>
                 <p style="font-size:14px">March 2023 (and constantly updating)</p>
-                <p>I self-learned web development and built this website as a personal project over spring break. I took the iniative to explore online developer tools and endeavored to incorporate interactive elements.</p>
+                <p>I self-learned web development and built this website as a personal project over spring break. I took the iniative to explore online developer tools and endeavored to increase interactivity.</p>
                 <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
                   </svg> Tech Stack
@@ -334,31 +334,62 @@ function myFunction() {
         </div>
 
         <div class="card">
-            <img src="https://images.pexels.com/photos/2927854/pexels-photo-2927854.jpeg?cs=srgb&dl=pexels-aidan-roof-2927854.jpg&fm=jpg" alt="test">
+          <img src="./glucose.png" alt="test">
+          <div class="card-text">
+              <p style="font-weight:bold;color:#03a9f4">Novel LSTM Glucose Prediction Model</p>
+              <p style="font-size:14px">June 2020 - October 2020</p>
+              <p>I collaborated with an assistant professor at University College London to build a glucose prediction model for Type 1 Diabetes patients using Recurrent Neural Networks. My study compared the performances of conventional RNN to Long Short-Term Memory and reduced one-third of running time while maintaining high accuracy.</p>
+              <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                </svg> Tech Stack
+                </p>
+              <div class="tech-stack">
+                  <p>Python</p>
+                  <p>TensorFlow</p>
+                  <p>and a writing website</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="card">
+        <img src="https://exemplary.ai/img/blog/sentiment-analysis/sentiment-analysis.svg" alt="test">
+        <div class="card-text">
+            <p style="font-weight:bold;color:#03a9f4">NLP Sentiment Analysis on Social Media Hate Speech</p>
+            <p style="font-size:14px">May 2021 - December 2021</p>
+            <p>Inspired by the Bechdel Test using NLP, I strove to research the optimal sentiment analysis model for large corpora. I applied five-fold validation to evaluate six BERT (Bidirectional Encoder Representations from Transformers) models under different learning rates and data volumes. Eventually, I built a detector that tests over 10k Twitter posts (hate speech was prevalent on social media).</p>
+            <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+              </svg> Tech Stack: <span style="color:black">Python</span>
+              </p>
+            
+        </div>
+    </div>
+
+        <div class="card">
+            <img src="https://developers.redhat.com/sites/default/files/styles/share/public/ST-c_2x.png?itok=UnBmTE70" alt="test">
             <div class="card-text">
-                <p>Project Name</p>
-                <p>project description Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, necessitatibus.</p>
-                <p>Tech Stack</p>
-                <div class="tech-stack">
-                    <p>HTML</p>
-                    <p>CSS</p>
-                    <p>JavaScript</p>
-                </div>
+                <p style="font-weight:bold;color:#03a9f4">System Vulnerability Reverse Engineering Labs</p>
+                <p style="font-size:14px">March 2023 - April 2023</p>
+                <p>For my computer systems class(also a class for which I now become the TA), I successfully defused four phases of a personalized binary bomb in one lab, and I applied buffer overflow attacks to two separate binary executables in another lab. In the two projects, I demonstrated my reverse-engineering skill in examining x86-64 assembly in gdb as well as my technical understanding of memory layout and the life cycle of a program compilation.</p>
+                <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                </svg> Tech Stack: <span style="color:black">C programming</span>
+                </p>
+                
             </div>
         </div>
 
         <div class="card">
-            <img src="https://images.pexels.com/photos/2927854/pexels-photo-2927854.jpeg?cs=srgb&dl=pexels-aidan-roof-2927854.jpg&fm=jpg" alt="test">
-            <div class="card-text">
-                <p>Project Name</p>
-                <p>project description Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, necessitatibus.</p>
-                <p>Tech Stack</p>
-                <div class="tech-stack">
-                    <p>HTML</p>
-                    <p>CSS</p>
-                    <p>JavaScript</p>
-                </div>
-            </div>
-        </div>
+          <img src="./p6_route2.png" alt="test">
+          <div class="card-text">
+              <p style="font-weight:bold;color:#03a9f4">United States Highway Network Routing Service</p>
+              <p style="font-size:14px">November 2022 - December 2022</p>
+              <p>As a class project, I implemented a routing service that represents the United States highway network as a graph and calculated routes and distances on this network with a partner. Our program allows the users to enter two U.S. cities, and it calculates and visualizes the shortest path between the two cities.</p>
+              <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+              </svg> Tech Stack: <span style="color:black">Java</span>
+              </p>
+          </div>
+      </div>
     </div>
 
