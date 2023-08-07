@@ -191,11 +191,11 @@ nav a:hover::after {
     height:600px;
     width:400px;
     margin:20px;
+    transition:ease-in-out 0.3s;
 }
 
 .card:hover{
     scale:104%;
-    transition:ease-in-out 0.3s;
 }
 
 .card img{
@@ -274,7 +274,7 @@ function myFunction() {
 
 <nav style="font-family:arial">
     <a href="#">Contact Me</a>
-    <a href="#author">Portfolio</a>
+    <a href="portfolio.html">Portfolio</a>
     <a href="about.html">About Me</a>
     <a href="index.html">Home</a>
   </nav>
@@ -294,7 +294,7 @@ function myFunction() {
         </ul> -->
         <p><a href="index.html">Home</a></p>
         <p><a href="about.html">About Me</a></p>
-        <p><a href="#">Portfolio</a></p>
+        <p><a href="portfolio.html">Portfolio</a></p>
         <p><a href="#">Contact Me</a></p>
     </div>
   </div>
@@ -316,11 +316,11 @@ function myFunction() {
   <div class="card-container">
 
         <div class="card">
-            <img src="./Website-project.png" alt="test">
+            <img src="./Website-project.png" alt="personal portfolio website">
             <div class="card-text">
                 <p style="font-weight:bold;color:#03a9f4">My Personal Website</p>
                 <p style="font-size:14px">March 2023 (and constantly updating)</p>
-                <p>I self-learned web development and built this website as a personal project over spring break. I took the iniative to explore online developer tools and endeavored to increase interactivity.</p>
+                <p>I self-learned web development and built this website as a personal project over spring break in my freshman year. I took the iniative to explore online developer tools and endeavored to increase interactivity in the website.</p>
                 <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
                   </svg> Tech Stack
@@ -332,6 +332,25 @@ function myFunction() {
                 </div>
             </div>
         </div>
+
+        <div class="card">
+          <img src="./modh.png" alt="Museum of Durham History's 150 Faces Exhibit">
+          <div class="card-text">
+              <p style="font-weight:bold;color:#03a9f4">Virtualizing Museum Exhibit "150 Faces of Durham"</p>
+              <p style="font-size:14px">Summer 2023</p>
+              <p>I built an accessible, responsive, and mobile-friendly virtual exhibit for the Museum of Durham History showcasing 150 people that contributed to the history of Durham. Some of my tickets included the landing page, the about us page, card detail view, student project carousel, design overhaul for the gallery page, and lazy loading/pagination.</p>
+              <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                </svg> Tech Stack
+                </p>
+              <div class="tech-stack">
+                  <p>Svelte</p>
+                  <p>SvelteKit</p>
+                  <p>MongoDB</p>
+                  <p>AWS</p>
+              </div>
+          </div>
+      </div>
 
         <div class="card">
           <img src="./glucose.png" alt="test">
@@ -346,7 +365,7 @@ function myFunction() {
               <div class="tech-stack">
                   <p>Python</p>
                   <p>TensorFlow</p>
-                  <p>and a writing website</p>
+                  <p>LaTeX</p>
               </div>
           </div>
       </div>
@@ -391,5 +410,18 @@ function myFunction() {
               </p>
           </div>
       </div>
+
+      <div class="card">
+        <img src="https://courses.cs.duke.edu/compsci201/spring17/assign/autocomplete/img/gui_example.png" alt="test">
+        <div class="card-text">
+            <p style="font-weight:bold;color:#03a9f4">Autocomplete Search Bar</p>
+            <p style="font-size:14px">November 2022</p>
+            <p>Coded an autocomplete software application that suggests and constantly updates possible completions for the text of each keystroke that users type in the input.</p>
+            <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+            </svg> Tech Stack: <span style="color:black">Java</span>
+            </p>
+        </div>
+    </div>
     </div>
 
