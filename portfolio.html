@@ -250,7 +250,7 @@ nav a:hover::after {
 }
 
 .hoverMore:hover img{
-  opacity:10%;
+  opacity:20%;
 }
 
 .hoverMore:hover .overlay{
@@ -278,7 +278,7 @@ img{
 
 .overlay-button{
   border:1px solid black;
-  padding:6px;
+  padding:12px;
   border-radius:10px;
   margin:5px;
 }
@@ -286,6 +286,10 @@ img{
 .overlay-button:hover{
   color:gray;
   border:1px solid gray;
+}
+
+.overlay>a{
+  color:black;
 }
 
 .overlay>a:visited{
@@ -403,6 +407,40 @@ function myFunction() {
           </div>
       </div>
 
+      <div class="card hoverMore">
+        <div class="container">
+          <img src="./p6_route2.png" alt="highway routing service demo">
+          <div class="overlay">
+            <a href="https://duke.box.com/s/u5gli1pi24n8if79fco45sprhkp8oph8" target="_blank"><div class="overlay-button">
+              Video Demo
+            </div></a>
+          </div>
+        </div>
+        <div class="card-text">
+            <p style="font-weight:bold;color:#03a9f4">United States Highway Network Routing Service</p>
+            <p style="font-size:14px">November 2022 - December 2022</p>
+            <p>As a class project, I implemented a routing service that represents the United States highway network as a graph and calculated routes and distances on this network with a partner. Our program allows the users to enter two U.S. cities, and it calculates and visualizes the shortest path between the two cities.</p>
+            <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+            </svg> Tech Stack: <span style="color:black">Java</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+      <img src="https://developers.redhat.com/sites/default/files/styles/share/public/ST-c_2x.png?itok=UnBmTE70" alt="test">
+      <div class="card-text">
+          <p style="font-weight:bold;color:#03a9f4">System Vulnerability Reverse Engineering Labs</p>
+          <p style="font-size:14px">March 2023 - April 2023</p>
+          <p>For my computer systems class(also a class for which I now become the TA), I successfully defused four phases of a personalized binary bomb in one lab, and I applied buffer overflow attacks to two separate binary executables in another lab. In the two projects, I demonstrated my reverse-engineering skill in examining x86-64 assembly in gdb as well as my technical understanding of memory layout and the life cycle of a program compilation.</p>
+          <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+          </svg> Tech Stack: <span style="color:black">C programming</span>
+          </p>
+          
+      </div>
+  </div>
+
         <div class="card">
           <img src="./glucose.png" alt="test">
           <div class="card-text">
@@ -435,33 +473,6 @@ function myFunction() {
         </div>
     </div>
 
-        <div class="card">
-            <img src="https://developers.redhat.com/sites/default/files/styles/share/public/ST-c_2x.png?itok=UnBmTE70" alt="test">
-            <div class="card-text">
-                <p style="font-weight:bold;color:#03a9f4">System Vulnerability Reverse Engineering Labs</p>
-                <p style="font-size:14px">March 2023 - April 2023</p>
-                <p>For my computer systems class(also a class for which I now become the TA), I successfully defused four phases of a personalized binary bomb in one lab, and I applied buffer overflow attacks to two separate binary executables in another lab. In the two projects, I demonstrated my reverse-engineering skill in examining x86-64 assembly in gdb as well as my technical understanding of memory layout and the life cycle of a program compilation.</p>
-                <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-                </svg> Tech Stack: <span style="color:black">C programming</span>
-                </p>
-                
-            </div>
-        </div>
-
-        <div class="card">
-          <img src="./p6_route2.png" alt="test">
-          <div class="card-text">
-              <p style="font-weight:bold;color:#03a9f4">United States Highway Network Routing Service</p>
-              <p style="font-size:14px">November 2022 - December 2022</p>
-              <p>As a class project, I implemented a routing service that represents the United States highway network as a graph and calculated routes and distances on this network with a partner. Our program allows the users to enter two U.S. cities, and it calculates and visualizes the shortest path between the two cities.</p>
-              <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-              </svg> Tech Stack: <span style="color:black">Java</span>
-              </p>
-          </div>
-      </div>
-
       <div class="card">
         <img src="https://courses.cs.duke.edu/compsci201/spring17/assign/autocomplete/img/gui_example.png" alt="test">
         <div class="card-text">
@@ -474,5 +485,18 @@ function myFunction() {
             </p>
         </div>
     </div>
+
+    <div class="card">
+      <img src="https://www.memorymanagement.org/_images/two-space.svg" alt="test">
+      <div class="card-text">
+          <p style="font-weight:bold;color:#03a9f4">Memory Allocations Management</p>
+          <p style="font-size:14px">April 2023</p>
+          <p>Implemented a segregated heap allocator to keep track of the memory used for C programs.</p>
+          <p style="color:#03a9f4"><svg style="width:12px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+          </svg> Tech Stack: <span style="color:black">C Programming</span>
+          </p>
+      </div>
+  </div>
     </div>
 
