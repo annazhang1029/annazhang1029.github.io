@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Planets Scroll Twirl</title>
+  <style>
+    .dropdown-content a {
+        color: white;
+        padding: 8px 25px 8px 0;
+        text-decoration: none;
+        display: inline-block;
+        position:relative;
+        left:-80px;
+        z-index:5;
+    }
+
+
+    .dropdown-content {
+        display: none;
+        position:relative;
+        /* left:-100px; */
+        /* left:200px; */
+        min-width: 160px;
+        /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+        display:block;
+        z-index:5;
+    }
+
+    .secondaryNav{
+        position:absolute;
+        z-index:3;
+        left:80%;
+        /* position: relative; */
+        /* display: inline-block; */
+    }
+
+    .secondaryNav img{
+        max-width:30px;
+        /* float:right;
+        position:fixed;
+        right:30px; */
+        left:30px;
+        position:relative;
+    }
+
+    .secondaryNav a:hover {
+        color:rgb(185, 184, 184);
+        font-weight:bold;
+    }
+
+    nav {
+        position: fixed;
+        width: 100%;
+        padding: 10px 16px;
+        top:0;
+        z-index: 3;
+        right:0;
+    }
+
+    a {
+        float:right;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    nav a {
+        color: white;
+        display: inline-block;
+        position: relative;
+        padding: 8px 12px;
+    }
+
+    nav a::after {
+        content: '';
+        position: absolute;
+        width: 75%;
+        transform: scaleX(0);
+        height: 4px;
+        bottom: 0;
+        left: 10px;
+        background-color: rgb(52, 51, 51);
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    nav a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    @media only screen and (max-width: 768px){
+        .secondaryNav{
+            display:block;
+        }
+
+        nav{
+            display:none;
+        }
+    }
+
+    @media only screen and (min-width: 768px){
+        .secondaryNav{
+            display:none;
+        }
+
+        nav{
+            display:block;
+        }
+    }
+
+    :root{
+      --gap: 36px;
+      --left-width: 48%;
+      --right-width: 48%;
+      --text: #f7fbff;
+      --bg: #000;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      /* font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; */
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* Page layout */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+      gap: var(--gap);
+      padding: 64px;
+      box-sizing: border-box;
+    }
+
+    /* Left column (text) */
+    .left {
+      width: var(--left-width);
+      display:flex;
+      flex-direction:column;
+      gap: 18px;
+    }
+
+    .left h1{
+      margin:0;
+      font-size: clamp(28px, 4vw, 36px);
+      letter-spacing: -0.02em;
+    }
+    .left p{
+      margin:0;
+      line-height:1.6;
+      font-size: clamp(16px, 2vw, 18px);
+      color: #f7fbff;
+    }
+
+    /* Right column (planets) */
+    .right {
+      width: var(--right-width);
+      display:flex;
+      flex-direction:column;
+      gap: 0;
+      align-items:center;
+      justify-content:flex-start;
+      /* visually separate */
+      padding-left: 16px;
+    }
+
+    /* Each planet container uses ~1/3 viewport height */
+    .planet-wrapper {
+      width: 100%;
+      /* height: calc(100vh / 3); ~1/3 of the viewport height */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-sizing:border-box;
+      position:relative;
+      overflow:visible;
+      /* optional: space between wrappers on narrow screens */
+      padding: 20px 0px;
+    }
+
+    /* Constrain the image size but keep it big and centered */
+    .planet {
+      max-height: 100%;
+      max-width: 100%;
+      will-change: transform;
+      transform: rotate(0deg) scale(1);
+      transform-origin: 50% 50%;
+      /* smooth transition if user scrolls quickly */
+      transition: transform 120ms linear;
+      user-select:none;
+      pointer-events:none; /* not interactive */
+      display:block;
+    }
+
+    /* small screens: stack vertically */
+    @media (max-width: 960px){
+      .page{
+        flex-direction:column;
+        padding: 28px;
+      }
+      .left, .right{
+        width:100%;
+      }
+      .right{
+        padding-left:0;
+      }
+      .planet-wrapper{
+        height: calc(100vw * 0.33); /* preserve relative size on small screens */
+      }
+    }
+
+    /* little visual flair: subtle card behind the right column */
+    .right::before{
+      content:"";
+      position:absolute;
+      pointer-events:none;
+      right:64px;
+      top:48px;
+      bottom:48px;
+      width:calc(var(--right-width) + 4px);
+      border-radius:20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(240,248,255,0.5));
+      box-shadow: 0 10px 30px rgba(20,30,50,0.06);
+      z-index:-1;
+      filter: blur(0.2px);
+    }
+
+    .text-slot {
+        min-height: calc(100vh / 2);
+        /* display: flex; */
+        padding-top: 20px;
+        font-family: "Spline Sans Mono", monospace;
+    }
+
+    .experience {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        font-size: 16px;
+    }
+
+    .header {
+        display: flex;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+    }
+
+    .org {
+        font-style: italic;
+    }
+
+    .course {
+        font-weight: 600;
+    }
+
+    .meta {
+        /* font-size: 0.9rem; */
+        color: #bfc2c6;
+        /* margin-left: 0.1rem; */
+    }
+
+    .inside-def {
+        padding-left: 20px;
+    }
+    
+
+
+  </style>
+</head>
+<body>
+
+    <nav style="font-family:arial; font-weight:500;">
+        <a href="#">Contact Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About Me</a>
+        <a href="index.html">Home</a>
+    </nav>
+  
+    <div class="secondaryNav">
+        <!-- <img src="menu2.png" alt="menu dropdown"> -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6" onclick="myFunction()" style="width:40px;position:relative;left:20px">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+        </svg>
+        
+        <div id="myDropdown" class="dropdown-content" style="display:none">
+            <!-- <ul style="list-style:none">
+                <div><a href="index.html">Home</a></div>
+                <div><a href="#hero">About Me</a></div>
+                <div><a href="#hero">Portfolio</a></div>
+                <div><a href="#hero">Contact Me</a></div>
+            </ul> -->
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About Me</a></p>
+            <p><a href="portfolio.html">Portfolio</a></p>
+            <p><a href="#">Contact Me</a></p>
+        </div>
+    </div>
+
+  <main class="page">
+    <section class="left">
+        <h1></h1>
+        <article class="text-slot">
+            <h1>def me():</h1>
+            <div class="inside-def">
+                <p style="padding-top: 30px;">
+                        While I believe there's no set formula to define who I am, here's an attempt.
+                </p>
+                <p style="padding-top: 30px;">
+                        I am a CS student at
+                        <b>Duke University</b>
+                        with AIML concentration and a minor in German Studies.
+                </p>
+                <p style="padding-top: 30px;">
+                    I possess experience in independent and collaborative projects, 
+                    2+ years of community service leadership roles, 
+                    and 3+ years in competitive coding.
+                </p>
+                <p style="padding-top: 30px;">
+                    I love teaching, as I believe in the power of knowledge sharing to uplift others and foster growth.
+                </p>
+            </div>
+        </article>
+        <article class="text-slot">
+            <h1>def teachingExp():</h1>
+            <div class="inside-def">
+                <div class="experience" style="padding-top: 50px;">
+                    <div class="role">
+                        <div class="header">
+                        <span class="org">UTA</span>
+                        <span class="course">CS390: Distributed and Networked Systems</span>
+                        </div>
+                        <div class="meta">Spring 2026</div>
+                    </div>
+
+                    <div class="role">
+                        <div class="header">
+                        <span class="org">UTA</span>
+                        <span class="course">CS210: Introduction to Computer Systems</span>
+                        </div>
+                        <div class="meta">Fall 2023, Spring 2024, Fall 2025, Spring 2026</div>
+                    </div>
+
+                    <div class="role">
+                        <div class="header">
+                        <span class="org">Peer Tutor</span>
+                        <span class="course">CS201: Algorithms and Data Structures</span>
+                        </div>
+                        <div class="meta">Fall 2025</div>
+                    </div>
+
+                    <div class="role">
+                        <div class="header">
+                        <span class="org">Peer Tutor</span>
+                        <span class="course">CS230: Discrete Mathematics</span>
+                        </div>
+                        <div class="meta">Spring 2025</div>
+                    </div>
+
+                    <p style="font-size: 16px;">
+                        Also, I am extremely grateful for the encouragement and acknowledgement I received during my time teaching.
+                        Having four professors asked me to be their UTA is truly an honor and honestly a highlight of my college experience.
+                    </p>
+
+                    <div class="role">
+                        <div class="header" style="padding-top: 0px;">
+                        <span class="org">Track Lead</span>
+                        <span class="course">DTech Prep Together</span>
+                        </div>
+                        <div class="meta">Spring - Summer 2025</div>
+                    </div>
+
+                    <div class="role">
+                        <div class="header">
+                        <span class="org">Engineering Skills Trainer</span>
+                        <span class="course">Duke Ignite Water Team</span>
+                        </div>
+                        <div class="meta">2022 - 2025</div>
+                    </div>
+
+                    <div class="role">
+                        <div class="header">
+                        <span class="org">Mentorship Intern</span>
+                        <span class="course">Girls Code the World</span>
+                        </div>
+                        <div class="meta">2022</div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article class="text-slot">
+            <h1>def travelExp():</h1>
+            <div class="inside-def">
+                <p style="padding-top: 30px;">
+                        I am a big fan of traveling. Ever since I was a kid, I have loved exploring new places and trying new foods.
+                </p>
+                <p style="padding-top: 30px;">
+                        I hope the list keeps growing. But so far, this is an incomplete summary of the countries I've visited.
+                </p>
+                <ul>
+                    <li>Canada, Singapore, Vietnam, Cambodia, Thailand, Russia, United Kingdom, Ireland, France, Germany, 
+                        Norway, Italy, Switzerland, Austria, Czech Republic, Hungary, Netherlands, Belgiumm, Poland, Sweden,
+                        Finland, Denmark, South Korea (only Incheon Airport), Qatar (only DOH), and Japan.
+                    </li>
+                    <li style="padding-top: 20px;">
+                        I had the amazing opportunity to study abroad in Berlin, and it was such an educational and eye-opening experience.
+                        I mastered my German speaking skills when it comes to ordering anything at a cafe. <b>Ich möchte einen Matcha Latte 
+                        und ein Schokoladencroissant, bitte!</b>
+                    </li>
+                    <li style="padding-top: 20px;">
+                        I had been dreaming of going to Japan for years, and I finally got to visit with my dad in the winter of 2025. 
+                        It was an exciting trip filled with sleep deprivation lol. I loved seeing all the jjk-referenced places in Tokyo 
+                        (what the hell is happening in Shibuya?), and I wore Kimono in Asakusa. The girl at the kimono rental shop said it's a strawberry-matcha-themed kimono,
+                        and I was going for a Kanroji Mitsuri look, so it was perfect! Guess what, I even found a Mitsuri figurine in Asakusa. It's now sitting at the top of my bookshelf hehehe.
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <aside class="right" aria-hidden="false">
+      <!-- Replace src with your actual PNG files -->
+      <div class="planet-wrapper">
+        <img class="planet" id="planet-1" src="src/img/neptune.png" alt="Cute Neptune">
+      </div>
+      <div class="planet-wrapper">
+        <img class="planet" id="planet-2" src="src/img/Pluto.png" alt="Cute Pluto">
+      </div>
+      <div class="planet-wrapper">
+        <img class="planet" id="planet-3" src="src/img/Earth.png" alt="Cute Earth">
+      </div>
+    </aside>
+  </main>
+
+<script>
+/*
+  Combined rotation + alignment script.
+  Paste at the end of <body> and remove any previous rotation/align scripts.
+*/
+
+(function () {
+  // ---- Config ----
+  const speedMultipliers = [1.0, 1.25, 0.85];
+
+  // ---- Elements ----
+  const planets = Array.from(document.querySelectorAll('.planet'));
+  const wrappers = Array.from(document.querySelectorAll('.planet-wrapper'));
+  const slots = Array.from(document.querySelectorAll('.text-slot'));
+  const count = Math.min(planets.length, wrappers.length, slots.length);
+
+  // ---- Utility ----
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+  // ---- Rotation update (scroll-tied, rAF) ----
+  // rAF driven update that reads wrapper geometry and sets planet transforms
+  let ticking = false;
+  function updateRotation() {
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+
+    for (let i = 0; i < count; i++) {
+      const planet = planets[i];
+      const wrapper = wrappers[i];
+      if (!planet || !wrapper) continue;
+
+      const rect = wrapper.getBoundingClientRect();
+      const elemCenter = rect.top + rect.height / 2;
+
+      // normalize center position to -1..1 where 0 = viewport center
+      const denom = (vh / 2) + (rect.height / 2) || 1;
+      let norm = (elemCenter - (vh / 2)) / denom;
+      norm = clamp(norm, -1, 1);
+
+      // Map normalized -1..1 -> -180deg .. +180deg (center -> 0deg upright)
+      const speed = speedMultipliers[i] || 1;
+      const degrees = norm * 180 * speed;
+
+      // subtle scale when close to center
+      const scale = 1 + (Math.max(0, 1 - Math.abs(norm)) * 0.06);
+
+      planet.style.transform = `rotate(${degrees}deg) scale(${scale})`;
+    }
+
+    ticking = false;
+  }
+
+  function requestPlanetUpdate() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateRotation);
+    }
+  }
+
+  // expose for debugging/other scripts
+  window.requestPlanetUpdate = requestPlanetUpdate;
+
+  // tie to scroll / resize
+  window.addEventListener('scroll', requestPlanetUpdate, { passive: true });
+  window.addEventListener('resize', requestPlanetUpdate);
+
+  // ---- Text-slot alignment ----
+  // store original marginTop to apply offsets on top of user's layout
+  slots.forEach(slot => {
+    const cs = getComputedStyle(slot);
+    slot.dataset.origMarginTop = parseFloat(cs.marginTop || '0') || 0;
+  });
+
+  function alignSlots() {
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+
+    for (let i = 0; i < count; i++) {
+      const wrapper = wrappers[i];
+      const slot = slots[i];
+      if (!wrapper || !slot) continue;
+
+      const wrapRect = wrapper.getBoundingClientRect();
+      const slotRect = slot.getBoundingClientRect();
+
+      // absolute positions relative to document top
+      const wrapperCenterDoc = wrapRect.top + wrapRect.height / 2 + scrollY;
+      const slotCenterDoc = slotRect.top + slotRect.height / 2 + scrollY;
+
+      // desired delta so that slot center moves to wrapper center
+      const delta = wrapperCenterDoc - slotCenterDoc;
+
+      const orig = parseFloat(slot.dataset.origMarginTop) || 0;
+      const newMarginTop = Math.round(orig + delta);
+
+      slot.style.marginTop = newMarginTop + 'px';
+    }
+
+    // After alignment, recompute rotation immediately so planets match new layout
+    requestPlanetUpdate();
+  }
+
+  // debounce helper for resize
+  let resizeTimer = null;
+  function onResize() {
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      alignSlots();
+      resizeTimer = null;
+      // also nudge rotation update after resize
+      requestPlanetUpdate();
+    }, 80);
+  }
+
+  // ---- Wait for DOM + images to stabilize, then run alignment + rotation ----
+  function runWhenReady() {
+    // If images are still loading, wait for them
+    const imgs = Array.from(document.images).filter(img => !img.complete);
+    if (imgs.length > 0) {
+      Promise.all(imgs.map(img => new Promise(res => { img.onload = img.onerror = res; })))
+        .then(() => {
+          alignSlots();
+        });
+    } else {
+      alignSlots();
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', runWhenReady);
+  window.addEventListener('load', runWhenReady);
+  window.addEventListener('resize', onResize);
+
+  // Initial tick in case page is already stable
+  requestPlanetUpdate();
+
+  // expose align function for debugging/manual calls
+  window.alignAboutTextToPlanets = alignSlots;
+
+})();
+</script>
+
+
+</body>
+</html>
